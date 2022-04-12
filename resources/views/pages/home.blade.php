@@ -129,5 +129,8 @@
 @endsection
 
 @push('script')
+    <script>
+        const AFFINDA_CREDENTIAL = "{{ env('AFFINDA_CREDENTIAL') }}";
+    </script>
     <script src="{{ mix('js/home.js') }}"></script>
 @endpush

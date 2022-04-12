@@ -11945,7 +11945,6 @@ __webpack_require__.r(__webpack_exports__);
 var RENDER = {
   init: function init(result) {
     var data = result.data;
-    console.log(data);
     this.renderName(data.name);
     this.renderProfession(data.profession);
     this.renderPhones(data.phoneNumbers);
@@ -12046,7 +12045,7 @@ var _require = __webpack_require__(/*! @affinda/affinda */ "./node_modules/@affi
     AffindaCredential = _require.AffindaCredential,
     AffindaAPI = _require.AffindaAPI;
 
-var credential = new AffindaCredential("98e10e159c3ef2eb0e4c579341d966d457df0872");
+var credential = new AffindaCredential(AFFINDA_CREDENTIAL);
 var client = new AffindaAPI(credential);
 var HOME = {
   file: null,

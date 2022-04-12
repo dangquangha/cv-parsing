@@ -1,7 +1,6 @@
 const RENDER = {
     init (result) {
         var data = result.data;
-        console.log(data);
 
         this.renderName(data.name);
         this.renderProfession(data.profession);

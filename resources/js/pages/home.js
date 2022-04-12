@@ -1,7 +1,7 @@
 import RENDER from "./components/render"
 
 const { AffindaCredential, AffindaAPI } = require("@affinda/affinda");
-const credential = new AffindaCredential("98e10e159c3ef2eb0e4c579341d966d457df0872");
+const credential = new AffindaCredential(AFFINDA_CREDENTIAL);
 const client = new AffindaAPI(credential);
 
 const HOME = {
