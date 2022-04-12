@@ -39,86 +39,86 @@
                             {{-- Name --}}
                             <tr>
                                 <td width="30%">Name</td>
-                                <td class="name"></td>
+                                <td class="name clear"></td>
                             </tr>
 
                             {{-- Profession --}}
                             <tr>
                                 <td width="30%">Profession</td>
-                                <td class="profession"></td>
+                                <td class="profession clear"></td>
                             </tr>
 
                             {{-- Phones --}}
                             <tr>
                                 <td width="30%">Phones</td>
-                                <td class="phones"></td>
+                                <td class="phones clear"></td>
                             </tr>
 
                             {{-- Emails --}}
                             <tr>
                                 <td width="30%">Emails</td>
-                                <td class="emails"></td>
+                                <td class="emails clear"></td>
                             </tr>
 
                             {{-- Date of birth --}}
                             <tr>
                                 <td width="30%">Date of birth</td>
-                                <td class="date-of-birth"></td>
+                                <td class="date-of-birth clear"></td>
                             </tr>
 
                             {{-- Location --}}
                             <tr>
                                 <td width="30%">Location</td>
-                                <td class="location"></td>
+                                <td class="location clear"></td>
                             </tr>
 
                             {{-- Objective --}}
                             <tr>
                                 <td width="30%">Objective</td>
-                                <td class="objective"></td>
+                                <td class="objective clear"></td>
                             </tr>
 
                             {{-- Languages --}}
                             <tr>
                                 <td width="30%">Languages</td>
-                                <td class="langagues"></td>
+                                <td class="langagues clear"></td>
                             </tr>
 
                             {{-- Summary --}}
                             <tr>
                                 <td width="30%">Summary</td>
-                                <td class="summary"></td>
+                                <td class="summary clear"></td>
                             </tr>
 
                             {{-- Educations --}}
                             <tr>
                                 <td width="30%">Education</td>
-                                <td class="educations"></td>
+                                <td class="educations clear"></td>
                             </tr>
 
                             {{-- Objective --}}
                             <tr>
                                 <td width="30%">Objective</td>
-                                <td class="objective">
+                                <td class="objective clear">
                                 </td>
                             </tr>
 
                             {{-- Languages --}}
                             <tr>
                                 <td width="30%">Languages</td>
-                                <td class="langagues"></td>
+                                <td class="langagues clear"></td>
                             </tr>
 
                             {{-- Skills --}}
                             <tr>
                                 <td width="30%">Skills</td>
-                                <td class="skills"></td>
+                                <td class="skills clear"></td>
                             </tr>
 
                             {{-- Work Experience --}}
                             <tr>
                                 <td width="30%">Work Experience</td>
-                                <td class="experiences"></td>
+                                <td class="experiences clear"></td>
                             </tr>
                         </tbody>
                     </table>

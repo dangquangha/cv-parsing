@@ -11930,48 +11930,20 @@ var VERSION = '1.0.4';
 
 /***/ }),
 
-/***/ "./resources/js/pages/home.js":
-/*!************************************!*\
-  !*** ./resources/js/pages/home.js ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "./resources/js/pages/components/render.js":
+/*!*************************************************!*\
+  !*** ./resources/js/pages/components/render.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js");
-var _require = __webpack_require__(/*! @affinda/affinda */ "./node_modules/@affinda/affinda/dist-esm/index.js"),
-    AffindaCredential = _require.AffindaCredential,
-    AffindaAPI = _require.AffindaAPI;
-
-var credential = new AffindaCredential("98e10e159c3ef2eb0e4c579341d966d457df0872");
-var client = new AffindaAPI(credential);
-var HOME = {
-  file: null,
-  init: function init() {
-    this.uploadFile();
-    this.parsingFile();
-  },
-  uploadFile: function uploadFile() {
-    $("#cv").change(function (event) {
-      HOME.file = event.target.files[0];
-    });
-  },
-  parsingFile: function parsingFile() {
-    $("#parsing-file").click(function () {
-      if (HOME.file) {
-        $('#files').prop('files'), $('.mask-loader').removeClass('hide');
-        client.createResume({
-          file: HOME.file
-        }).then(function (result) {
-          HOME.renderResult(result);
-          $('.mask-loader').addClass('hide');
-        })["catch"](function (error) {
-          console.log("An error occurred:");
-          console.dir(error);
-          $('.mask-loader').addClass('hide');
-        });
-      }
-    });
-  },
-  renderResult: function renderResult(result) {
+var RENDER = {
+  init: function init(result) {
     var data = result.data;
     console.log(data);
     this.renderName(data.name);
@@ -12014,7 +11986,7 @@ var HOME = {
     });
   },
   renderDateOfBirth: function renderDateOfBirth(date) {
-    $('.date-of-birth').append("<p><span>".concat(date !== null && date !== void 0 ? date : 'N/A', "</span></p>"));
+    $('.date-of-birth').append("<p><span>".concat(date ? new Date(date).toISOString().split('T')[0] : 'N/A', "</span></p>"));
   },
   renderLocation: function renderLocation(location) {
     var _location$rawInput;
@@ -12036,7 +12008,7 @@ var HOME = {
     educations.forEach(function (education) {
       var _education$organizati;
 
-      $('.educations').append("\n                <p><b>".concat((_education$organizati = education.organization) !== null && _education$organizati !== void 0 ? _education$organizati : 'N/A', "</b></p>\n                <p>Location: <span>").concat(education.location ? education.location.rawInput : 'N/A', "</span></p>\n                <p>From: <span>").concat(education.dates ? education.dates.startDate : 'N/A', "</span></p>\n                <p>To: <span>").concat(education.dates ? education.dates.completionDate : 'N/A', "</span></p>\n            "));
+      $('.educations').append("\n                <p><b>".concat((_education$organizati = education.organization) !== null && _education$organizati !== void 0 ? _education$organizati : 'N/A', "</b></p>\n                <p>Location: <span>").concat(education.location ? education.location.rawInput : 'N/A', "</span></p>\n                <p>From: <span>").concat(education.dates ? new Date(education.dates.startDate).toISOString().split('T')[0] : 'N/A', "</span></p>\n                <p>To: <span>").concat(education.dates ? new Date(education.dates.completionDate).toISOString().split('T')[0] : 'N/A', "</span></p>\n            "));
     });
   },
   renderSkills: function renderSkills(skills) {
@@ -12050,7 +12022,60 @@ var HOME = {
     exps.forEach(function (exp) {
       var _exp$organization, _exp$jobDescription;
 
-      $('.experiences').append("\n                <p><b>".concat(exp.jobTitle, "</b> at <b>").concat((_exp$organization = exp.organization) !== null && _exp$organization !== void 0 ? _exp$organization : 'N/A', "</b></p>\n                <p>Role: <span>").concat(exp.occupation ? exp.occupation.jobTitleNormalized : 'N/A', "</span></p>\n                <p>Description: <span>").concat((_exp$jobDescription = exp.jobDescription) !== null && _exp$jobDescription !== void 0 ? _exp$jobDescription : 'N/A', "</span></p>\n                <p>From: <span>").concat(exp.dates ? exp.dates.startDate : 'N/A', "</span></p>\n                <p>To: <span>").concat(exp.dates ? exp.dates.completionDate : 'N/A', "</span></p>\n            "));
+      $('.experiences').append("\n                <p><b>".concat(exp.jobTitle, "</b> at <b>").concat((_exp$organization = exp.organization) !== null && _exp$organization !== void 0 ? _exp$organization : 'N/A', "</b></p>\n                <p>Role: <span>").concat(exp.occupation ? exp.occupation.jobTitleNormalized : 'N/A', "</span></p>\n                <p>Description: <span>").concat((_exp$jobDescription = exp.jobDescription) !== null && _exp$jobDescription !== void 0 ? _exp$jobDescription : 'N/A', "</span></p>\n                <p>From: <span>").concat(exp.dates ? new Date(exp.dates.startDate).toISOString().split('T')[0] : 'N/A', "</span></p>\n                <p>To: <span>").concat(exp.dates ? new Date(exp.dates.completionDate).toISOString().split('T')[0] : 'N/A', "</span></p>\n            "));
+    });
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RENDER);
+
+/***/ }),
+
+/***/ "./resources/js/pages/home.js":
+/*!************************************!*\
+  !*** ./resources/js/pages/home.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/render */ "./resources/js/pages/components/render.js");
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js");
+
+
+var _require = __webpack_require__(/*! @affinda/affinda */ "./node_modules/@affinda/affinda/dist-esm/index.js"),
+    AffindaCredential = _require.AffindaCredential,
+    AffindaAPI = _require.AffindaAPI;
+
+var credential = new AffindaCredential("98e10e159c3ef2eb0e4c579341d966d457df0872");
+var client = new AffindaAPI(credential);
+var HOME = {
+  file: null,
+  init: function init() {
+    this.uploadFile();
+    this.parsingFile();
+  },
+  uploadFile: function uploadFile() {
+    $("#cv").change(function (event) {
+      HOME.file = event.target.files[0];
+    });
+  },
+  parsingFile: function parsingFile() {
+    $("#parsing-file").click(function () {
+      if (HOME.file) {
+        $('.mask-loader').removeClass('hide');
+        $('.clear').html('');
+        $('#files').prop('files'), // client.createResume({url: "https://api.affinda.com/static/sample_resumes/example.pdf"})
+        client.createResume({
+          file: HOME.file
+        }).then(function (result) {
+          _components_render__WEBPACK_IMPORTED_MODULE_0__["default"].init(result);
+          $('.mask-loader').addClass('hide');
+        })["catch"](function (error) {
+          console.log("An error occurred:");
+          console.dir(error);
+          $('.mask-loader').addClass('hide');
+        });
+      }
     });
   }
 };
