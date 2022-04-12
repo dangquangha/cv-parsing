@@ -92,7 +92,7 @@ const RENDER = {
                 <p>Role: <span>${exp.occupation ? exp.occupation.jobTitleNormalized : 'N/A'}</span></p>
                 <p>Description: <span>${exp.jobDescription ?? 'N/A'}</span></p>
                 <p>From: <span>${exp.dates ? new Date(exp.dates.startDate).toISOString().split('T')[0] : 'N/A'}</span></p>
-                <p>To: <span>${exp.dates ? new Date(exp.dates.completionDate).toISOString().split('T')[0] : 'N/A'}</span></p>
+                <p>To: <span>${exp.dates ? new Date(exp.dates.endDate).toISOString().split('T')[0] : 'N/A'}</span></p>
             `);
         });
     }

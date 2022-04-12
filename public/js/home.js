@@ -12022,7 +12022,7 @@ var RENDER = {
     exps.forEach(function (exp) {
       var _exp$organization, _exp$jobDescription;
 
-      $('.experiences').append("\n                <p><b>".concat(exp.jobTitle, "</b> at <b>").concat((_exp$organization = exp.organization) !== null && _exp$organization !== void 0 ? _exp$organization : 'N/A', "</b></p>\n                <p>Role: <span>").concat(exp.occupation ? exp.occupation.jobTitleNormalized : 'N/A', "</span></p>\n                <p>Description: <span>").concat((_exp$jobDescription = exp.jobDescription) !== null && _exp$jobDescription !== void 0 ? _exp$jobDescription : 'N/A', "</span></p>\n                <p>From: <span>").concat(exp.dates ? new Date(exp.dates.startDate).toISOString().split('T')[0] : 'N/A', "</span></p>\n                <p>To: <span>").concat(exp.dates ? new Date(exp.dates.completionDate).toISOString().split('T')[0] : 'N/A', "</span></p>\n            "));
+      $('.experiences').append("\n                <p><b>".concat(exp.jobTitle, "</b> at <b>").concat((_exp$organization = exp.organization) !== null && _exp$organization !== void 0 ? _exp$organization : 'N/A', "</b></p>\n                <p>Role: <span>").concat(exp.occupation ? exp.occupation.jobTitleNormalized : 'N/A', "</span></p>\n                <p>Description: <span>").concat((_exp$jobDescription = exp.jobDescription) !== null && _exp$jobDescription !== void 0 ? _exp$jobDescription : 'N/A', "</span></p>\n                <p>From: <span>").concat(exp.dates ? new Date(exp.dates.startDate).toISOString().split('T')[0] : 'N/A', "</span></p>\n                <p>To: <span>").concat(exp.dates ? new Date(exp.dates.endDate).toISOString().split('T')[0] : 'N/A', "</span></p>\n            "));
     });
   }
 };
